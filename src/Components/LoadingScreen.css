@@ -1,0 +1,19 @@
+#load-screen{
+    z-index: 400;
+}
+#load-screen-overlay{
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    opacity: 50%;
+    position: fixed;
+    z-index: 200;
+}
+#load-img{
+    position: fixed;
+    z-index: 400;
+    width: 100px;
+    left: 50vw;
+    top: 50vw;
+    transform: translate(-50%,-50%);
+}
