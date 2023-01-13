@@ -204,6 +204,7 @@ class Manual extends React.Component{
           </div>
         </Card>
         <Insert  template={this.state.template} editTemplate={this.editTemplate}/>
+          <a href="https://drive.google.com/file/d/1lPq1n6SFZUWZPlinNHp4JAwciS7nE3rw/view?usp=share_link" download id="server-link">Unduh server</a>
         </div>
         </Card>
       </div>
