@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/backend
+/whatsapush-server
 /.pnp
 .pnp.js
 

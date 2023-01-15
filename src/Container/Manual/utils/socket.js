@@ -4,10 +4,11 @@ module.exports = (socket,parent)=>{
     })
     socket.on("connect", () => {
       console.log("Connected : " + socket.connected);
-
+      document.getElementById('turn-server').style.display = "none"
     });
     socket.on("disconnect", () => {
       console.log("Connected : " + socket.connected);
+      document.getElementById('turn-server').style.display = "block"
     });
     socket.on('sendQR',(msg)=>{
       parent.setState({

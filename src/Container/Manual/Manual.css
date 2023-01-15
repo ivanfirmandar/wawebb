@@ -128,6 +128,19 @@ th{
     text-align: center;
     margin: 0;
 }
+#say-hi{
+    height: auto;
+    width: 100%;
+    padding: 0px;
+    background-color: teal;
+    border-color: teal;
+    margin-bottom: 10px;
+    font-size: 12px;
+    border-radius: 100ch;
+    animation: animate;
+    animation-duration: 4s;
+}
+
 #server-link{
     font-size: 14px;
 }

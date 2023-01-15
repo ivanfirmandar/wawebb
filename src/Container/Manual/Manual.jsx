@@ -92,6 +92,7 @@ class Manual extends React.Component{
       <div id="master-container">
         <LoadingScreen />
         <ImageForm url={this.state.imageurl} parent={this} />
+        <ModalBox header="Pengumuman" text="Nyalakan dulu servernya, wahai Manusia! " ids="turn-server" default="block" buttonDisplay="none" linkName="Download Server" link={Config.downloadlink}/>
         <ModalBox header="Pengumuman" text="Scan dulu ya" ids="modal-send"/>
         <ModalBox header="Pengumuman" text="Berhasil mengubah!" ids="modal-template"/>
         <ModalBox header="Pengumuman" text="Telepon genggam berhasil terhubung!" ids="connect-template"/>
@@ -100,6 +101,9 @@ class Manual extends React.Component{
       <div id="Manual-container">
         <Card id="Manual-card">
             <Card id="Manual-qr-card">
+                <Button id="say-hi" onClick={()=>{
+                  window.open("http://wa.me/6285171735484",'_blank')
+                }}><a>Katakan Hi pada pembuat @IvanFirmandaR</a></Button>
                 <img src={LoadingImage} className="loadingImage" id="qrcodeload"></img>
                 {qrCodePicture}
                 <Button onClick={this.connectDevice} variant="warning" id="Manual-button-connect">Connect</Button>
@@ -204,7 +208,6 @@ class Manual extends React.Component{
           </div>
         </Card>
         <Insert  template={this.state.template} editTemplate={this.editTemplate}/>
-        <a href="https://drive.google.com/file/d/1lPq1n6SFZUWZPlinNHp4JAwciS7nE3rw/view?usp=share_link" download id="server-link">Unduh server</a>
         </div>
         </Card>
       </div>
