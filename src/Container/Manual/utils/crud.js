@@ -38,6 +38,25 @@ const crud = {
             imageurl : response.data.data
           })
         }
+      },
+      sendRecap : async (success, unregistered, unvalid, none, city)=>{
+        let json = {
+          success : success,
+          unregistered : unregistered,
+          unvalid : unvalid,
+          none : none,
+          total : success + unregistered + unvalid + none,
+          city : city
+        }
+        const response = await fetch("https://backend-uppdnganjuk.vercel.app/api/whatsapush/sentrecap",{
+          method : "POST",
+          headers:{
+            'Content-Type' : 'application/json'
+          },
+          body : JSON.stringify(json)
+        })
+        let result = await response.json();
+        
       }
 }
 

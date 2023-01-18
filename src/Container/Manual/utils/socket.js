@@ -1,4 +1,6 @@
-module.exports = (socket,parent)=>{
+import crudData from "./crud";
+
+const socketStart = (socket,parent)=>{
     socket.emit('get-template',(response)=>{
       document.getElementById('template-text').value = response.text
     })
@@ -58,7 +60,7 @@ module.exports = (socket,parent)=>{
     socket.on('send-error',(msg)=>{
       alert(msg.clue)
     })
-    socket.on("send-done",(msg)=>{
+    socket.on("send-done",async (msg)=>{
       document.getElementById('send-done').style.display = "block"
       console.log(msg)
       document.getElementById('send-done').getElementsByClassName("card-text")[0].innerHTML = `
@@ -66,5 +68,9 @@ module.exports = (socket,parent)=>{
       Tidak terdaftar: ${msg.total.unregistered_count} \n
       Tidak valid: ${msg.total.notvalid_count}\n
       Tidak ada: ${msg.total.nophone_count}`
+      await crudData.sendRecap(msg.total.success_count, msg.total.unregistered_count, msg.total.notvalid_count,msg.total.nophone_count, parent.state.city)
+
     })
   }
+
+  export default socketStart

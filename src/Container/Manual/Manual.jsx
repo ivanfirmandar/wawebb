@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import { Card, Table } from 'react-bootstrap'
 import QRCode from 'react-qr-code'
 import textParser from "./utils/textParser"
+import Login from "../../Components/Login"
 import React from 'react';
 import LoadingImage from '../../Images/loading.gif'
 import "./Manual.css"
@@ -91,6 +92,7 @@ class Manual extends React.Component{
     return(
       <div id="master-container">
         <LoadingScreen />
+        <Login parent={this}/>
         <ImageForm url={this.state.imageurl} parent={this} />
         <ModalBox header="Pengumuman" text="Nyalakan dulu servernya, wahai Manusia! " ids="turn-server" default="block" buttonDisplay="none" linkName="Download Server" link={Config.downloadlink}/>
         <ModalBox header="Pengumuman" text="Scan dulu ya" ids="modal-send"/>

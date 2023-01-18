@@ -1,0 +1,21 @@
+#Login-container{
+    width: auto;
+    height: auto;
+    position: fixed;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%,-50%);
+    z-index: 700;
+    text-align: center;
+}
+#modal-background{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: black;
+    opacity: 50%;
+    z-index: 600;
+}
+.button-modal{
+    margin: 5px;
+}
