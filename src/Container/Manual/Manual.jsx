@@ -105,7 +105,7 @@ class Manual extends React.Component{
             <Card id="Manual-qr-card">
                 <Button id="say-hi" onClick={()=>{
                   window.open("http://wa.me/6285171735484",'_blank')
-                }}><a>Katakan Hi pada pembuat @IvanFirmandaR</a></Button>
+                }}><a>© UPT PPD Nganjuk | Ivan Firmanda  2021. All right reserved</a></Button>
                 <img src={LoadingImage} className="loadingImage" id="qrcodeload"></img>
                 {qrCodePicture}
                 <Button onClick={this.connectDevice} variant="warning" id="Manual-button-connect">Connect</Button>
