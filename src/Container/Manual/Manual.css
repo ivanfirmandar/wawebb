@@ -140,7 +140,17 @@ th{
     animation: animate;
     animation-duration: 4s;
 }
-
+#alert{
+    position: fixed;
+    width: 100vw;
+    height: auto;
+    padding: 8px;
+    text-align: center;
+    z-index: 1000;
+}
+.nopol-small:hover{
+    background-color: pink;
+}
 #server-link{
     font-size: 14px;
 }

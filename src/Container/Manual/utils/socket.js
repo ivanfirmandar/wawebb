@@ -71,6 +71,11 @@ const socketStart = (socket,parent)=>{
       if(parent.state.city != null){
         await crudData.sendRecap(msg.total.success_count, msg.total.unregistered_count, msg.total.notvalid_count,msg.total.nophone_count, parent.state.city)
       }
+      let elements = document.getElementsByClassName("nopol-small");
+      for (let index = 0; index < elements.length; index++) {
+        elements[index].style.backgroundColor = "white"
+        
+      }
     })
   }
 

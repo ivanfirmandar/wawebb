@@ -1,12 +1,13 @@
 import { io } from "socket.io-client"
 import Button from 'react-bootstrap/Button'
-import { Card, Table } from 'react-bootstrap'
+import { Card, Table, Alert } from 'react-bootstrap'
 import QRCode from 'react-qr-code'
 import textParser from "./utils/textParser"
 import Login from "../../Components/Login"
 import React from 'react';
 import LoadingImage from '../../Images/loading.gif'
 import "./Manual.css"
+import UserClient from "../../client.json"
 import ModalBox from '../../Components/ModalBox'
 import EditForm from '../../Components/EditForm'
 import ImageForm from "../../Components/ImageForm"
@@ -91,6 +92,9 @@ class Manual extends React.Component{
     }
     return(
       <div id="master-container">
+        <Alert id="alert" key="info" variant="info">
+          {UserClient.info}
+        </Alert>
         <LoadingScreen />
         <Login parent={this}/>
         <ImageForm url={this.state.imageurl} parent={this} />
@@ -149,7 +153,7 @@ class Manual extends React.Component{
             {this.state.datas.map((data)=>{
               if(this.state.datas.length >0){
                 return(
-                  <div className="nopol-detail" onMouseOver={()=>textParser.nopolDetail(data.no_urut,this)} id={data.no_surat}>
+                  <div className="nopol-detail nopol-small" onMouseOver={()=>textParser.nopolDetail(data.no_urut,this)} id={data.no_surat}>
                     <b>{data.no_urut}</b>
                   </div>
                 )
