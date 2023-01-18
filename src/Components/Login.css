@@ -19,3 +19,8 @@
 .button-modal{
     margin: 5px;
 }
+#dipilih-dulu{
+    color: red;
+    text-transform: lowercase;
+    font-size: small;
+}

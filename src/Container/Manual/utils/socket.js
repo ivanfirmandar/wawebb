@@ -68,8 +68,9 @@ const socketStart = (socket,parent)=>{
       Tidak terdaftar: ${msg.total.unregistered_count} \n
       Tidak valid: ${msg.total.notvalid_count}\n
       Tidak ada: ${msg.total.nophone_count}`
-      await crudData.sendRecap(msg.total.success_count, msg.total.unregistered_count, msg.total.notvalid_count,msg.total.nophone_count, parent.state.city)
-
+      if(parent.state.city != null){
+        await crudData.sendRecap(msg.total.success_count, msg.total.unregistered_count, msg.total.notvalid_count,msg.total.nophone_count, parent.state.city)
+      }
     })
   }
 

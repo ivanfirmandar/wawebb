@@ -19,8 +19,14 @@ class Login extends React.Component{
         }
     }
     loginUser = ()=>{
-    this.props.parent.state.city = document.getElementById("select-city").value
-            document.getElementById("LoginMaster").style.display = "none"
+            let city = document.getElementById("select-city").value
+            this.props.parent.state.city = city;
+            if (city != "0") {
+                document.getElementById("LoginMaster").style.display = "none"
+            }else{
+document.getElementById("dipilih-dulu").style.display = "block"
+            }
+            
 
     }
     render(){
@@ -35,6 +41,7 @@ class Login extends React.Component{
                         return <option value={each}>{each}</option>
                     })}
                     </Form.Select>
+                    <Card.Text id="dipilih-dulu" style={{"display":"none"}}>Dipilih dulu massee...</Card.Text>
                     <Button variant="warning" style={{display:this.state.buttonDisplay}} className="button-modal" onClick={this.loginUser}>Masuk</Button>
                 </Card.Body>
                 </Card>
