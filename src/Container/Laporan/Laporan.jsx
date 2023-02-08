@@ -3,7 +3,8 @@ import { Table, Form, Button } from "react-bootstrap";
 import Client from "../../client.json"
 import LoadingScreen from "../../Components/LoadingScreen";
 import "./laporan.css"
-
+import Logo from "../../Images/logo-01.png"
+import { counter } from "@fortawesome/fontawesome-svg-core";
 
 class Laporan extends React.Component{
     constructor(props){
@@ -40,10 +41,15 @@ class Laporan extends React.Component{
         document.getElementById("load-screen").style.display = "block"
     }
     render(){
+        let counter_sent = 0
+        let counter_unregistered = 0
+        let counter_invalid = 0
+        let counter_none = 0
+        let counter_total = 0
         return(
             <div>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <img id="logo" src={Logo} alt="" style={{width:"30px",height:"30px"}}/>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -92,6 +98,11 @@ class Laporan extends React.Component{
                         date_datas = date_datas[0] +"-" + date_datas[1]
                         if(data.city == this.state.city | this.state.city == "semua"){
                             if(date_input == date_datas|| this.state.date == ""){
+                                counter_sent += data.success
+                                counter_unregistered += data.unregistered
+                                counter_invalid += data.unvalid
+                                counter_none += data.none
+                                counter_total += data.total
                                 return(
                                     <tr>
                                     <td>{data.date.split("T")[0]}</td>
@@ -108,6 +119,16 @@ class Laporan extends React.Component{
                            
                         }
                     })}
+                    <tr>
+                        <td>Total</td>
+                        <td></td>
+                        <td>{counter_sent}</td>
+                        <td>{counter_unregistered}</td>
+                        <td>{counter_invalid}</td>
+                        <td>{counter_none}</td>
+                        <td>{counter_total}</td>
+                        <td>{Math.ceil(counter_sent/counter_total*100) + "%"}</td>
+                    </tr>
                 </tbody>
                 </Table>
             </div>
