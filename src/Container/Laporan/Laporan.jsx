@@ -20,7 +20,7 @@ class Laporan extends React.Component{
 
     }
     async getData(){
-        const response = await fetch("https://backend-uppdnganjuk.vercel.app//api/whatsapush/laporan")
+        const response = await fetch("https://backend-uppdnganjuk.vercel.app/api/whatsapush/laporan")
           let result = await response.json();
           this.setState({
             datas : result.datas
