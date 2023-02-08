@@ -81,7 +81,9 @@ class Manual extends React.Component{
       template :document.getElementById('edit-template').value
     })
   }
-  
+  openLaporan(){
+    window.location = "laporan"
+  }
   render(){
     let qrCodePicture;
     console.log("RENDERING COMPONENTS")
@@ -148,6 +150,7 @@ class Manual extends React.Component{
         <Button variant="danger" id="Manual-button" className="theButtons" onClick={this.readPdf}>Read</Button>
         <Button variant="warning" id="Manual-button-image" onClick={this.openImage} className="theButtons">Image</Button>
         <Button variant="info" id="Manual-button-send" onClick={this.sendWA} className="theButtons">Send</Button>
+        <Button variant="secondary" id="Manual-button-send" onClick={this.openLaporan} className="theButtons">Laporan</Button>
         <div>
           <Card className="mt-3" id="table-container">
             {this.state.datas.map((data)=>{
