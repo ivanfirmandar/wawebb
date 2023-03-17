@@ -36,5 +36,5 @@
         "Sampang",
         "Sumenep"
     ],
-    "info": "Anda dapat melihat laporan hasil pengiriman dengan klik tombol Laporan"
+    "info": "Kalau ngga ke kirim, ganti file Injected.js (yg baru ada di drive) di backend/node_modules/whatsapp-web.js/src/utils"
 }
