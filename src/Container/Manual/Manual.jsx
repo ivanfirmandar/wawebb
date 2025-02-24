@@ -204,8 +204,10 @@ class Manual extends React.Component{
             <p>#18# Parkir</p>
             <p>#19# Biaya Total</p>
             <p>#20# Nomor Entri</p>
+            <p>#21# Opsen</p>
           </div>
           <div>
+            <p className="detail-data-preview">undefined</p>
             <p className="detail-data-preview">undefined</p>
             <p className="detail-data-preview">undefined</p>
             <p className="detail-data-preview">undefined</p>
