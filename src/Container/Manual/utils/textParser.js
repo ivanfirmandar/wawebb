@@ -22,6 +22,7 @@ module.exports = {
         detail[17].innerHTML = parent.state.datas[e].parkir
         detail[18].innerHTML = parent.state.datas[e].biaya_tot
         detail[19].innerHTML = parent.state.datas[e].no_entri
+        detail[20].innerHTML = parent.state.datas[e].opsen
       },
     compileData : (parent)=>{
         const messageDatas = []
@@ -59,6 +60,7 @@ module.exports = {
           .replace("#18#",datas[index].parkir)
           .replace("#19#",datas[index].biaya_tot)
           .replace("#20#",datas[index].no_entri)
+          .replace("#20#",datas[index].opsen)
           
           datasTemplate.datas = datas[index]
           datasTemplate.phone = datas[index].no_hp
